@@ -9,7 +9,7 @@
   body {
     font-family: sans-serif;
     text-align: center;
-    margin: 80px auto; /* space from top */
+    margin: 80px auto;
     max-width: 600px;
     padding: 0 20px;
   }
@@ -22,33 +22,24 @@
     margin-bottom: 40px;
   }
 
-  /* Center Brevo form */
+  /* Center Brevo form and its contents */
   #sib-container,
-  #sib-form-container {
+  #sib-form-container,
+  #sib-container form {
     display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important; /* horizontally center */
-    justify-content: center !important;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center !important;
     margin: 0 auto !important;
-    padding: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  #sib-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    max-width: 300px; /* same width as input */
-  }
-
-  /* Minimal styling for input */
+  /* Minimal email input styling */
   #sib-container input#EMAIL {
-    width: 100%;
+    width: 300px;
+    max-width: 100%;
     padding: 8px;
     font-size: 16px;
     text-align: center;
@@ -72,6 +63,7 @@
     color: black;
     border: 1px solid black;
     border-radius: 0;
+    margin-top: 10px;
   }
 
   /* Join my email list text */
@@ -100,14 +92,29 @@
 <!-- Brevo Form -->
 <div id="sib-container">
   <div id="sib-form-container">
-    <form id="sib-form" method="POST" action="https://013e89fa.sibforms.com/serve/MUIFAOzSQJvDuhMQzgfp0A9hMMWe8yB4uB8qJ-7d4l6s3iKBs88u4XKJhx3PebdtCDNxqhFVeUgsOOaFIowD-sTskv_D3-2v_lr5tdZnp0_E1Z6t9x6M9AtkPXI59O0OJ7r-q56vX-Y8v-ED1zYtL02q91_IgrLn9ymAnIuRDunkc0OrzmP9D50-Xhx_yyht2i6cRRdoBsfCIl2sIQ==" data-type="subscription">
-      
-      <div class="form-title">Join my email list</div>
-      
-      <input type="text" id="EMAIL" name="EMAIL" placeholder="Enter your email" required>
-      
-      <button type="submit">Submit</button>
-    </form>
+    <div class="sib-form" style="text-align: center;">
+      <form id="sib-form" method="POST" data-type="subscription" 
+        action="https://013e89fa.sibforms.com/serve/MUIFAOzSQJvDuhMQzgfp0A9hMMWe8yB4uB8qJ-7d4l6s3iKBs88u4XKJhx3PebdtCDNxqhFVeUgsOOaFIowD-sTskv_D3-2v_lr5tdZnp0_E1Z6t9x6M9AtkPXI59O0OJ7r-q56vX-Y8v-ED1zYtL02q91_IgrLn9ymAnIuRDunkc0OrzmP9D50-Xhx_yyht2i6cRRdoBsfCIl2sIQ==">
+
+        <!-- Small, non-bold title -->
+        <div class="form-title">Join my email list</div>
+
+        <!-- Email input -->
+        <div>
+          <input type="text" id="EMAIL" name="EMAIL" placeholder="Enter your email" required>
+        </div>
+
+        <!-- Submit button -->
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+
+        <!-- Hidden fields Brevo requires -->
+        <input type="text" name="email_address_check" value="" class="input--hidden">
+        <input type="hidden" name="locale" value="en">
+
+      </form>
+    </div>
   </div>
 </div>
 
