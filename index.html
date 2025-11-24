@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vash P.</title>
 
-<!-- Brevo CSS -->
-<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
 <style>
   body {
     font-family: sans-serif;
@@ -17,62 +14,36 @@
     padding: 0 20px;
   }
 
+  h1 {
+    margin-top: 80px;
+    margin-bottom: 40px;
+  }
+
   a {
     text-decoration: none;
     color: black;
   }
 
   p.socials {
-    margin-top: 30px;
+    margin-top: 0;
     margin-bottom: 40px;
+    font-size: 18px;
   }
 
-  /* Center everything inside the Brevo form container */
-  #sib-container, #sib-form-container, #sib-container .sib-form {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-
-  /* Style the email input */
-  #sib-container input#EMAIL {
-    width: 300px;
+  iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    text-align: center;
-    margin: 10px 0;
-    border: 1px solid black;
-    border-radius: 0;
+    border: none;
+    height: 305px; /* Keep the height from your iframe */
   }
 
-  #sib-container input#EMAIL::placeholder {
-    text-align: center;
-    font-size: 14px;
-    color: #333;
-  }
-
-  /* Style the submit button */
-  #sib-container button {
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    background: none;
-    color: black;
-    border: 1px solid black;
-    border-radius: 0;
-    margin-top: 10px;
-  }
-
-  /* Join my email list text */
-  #sib-container .form-title {
-    font-size: 20px;
-    font-weight: normal;
-    margin-bottom: 10px;
+  /* Optional: make the iframe responsive */
+  @media (max-width: 600px) {
+    iframe {
+      height: 400px;
+    }
   }
 </style>
 </head>
@@ -86,33 +57,15 @@
   <a href="https://www.tiktok.com/@mr.vash.p" target="_blank">TikTok</a>
 </p>
 
-<!-- Brevo Form -->
-<div class="sib-form" style="text-align: center;">
-  <div id="sib-container" class="sib-container--large sib-container--vertical">
-    <div id="sib-form-container">
-      <div id="error-message" class="sib-form-message-panel" style="display:none;"></div>
-      <div id="success-message" class="sib-form-message-panel" style="display:none;"></div>
-      
-      <form id="sib-form" method="POST" data-type="subscription"
-        action="https://013e89fa.sibforms.com/serve/MUIFAOzSQJvDuhMQzgfp0A9hMMWe8yB4uB8qJ-7d4l6s3iKBs88u4XKJhx3PebdtCDNxqhFVeUgsOOaFIowD-sTskv_D3-2v_lr5tdZnp0_E1Z6t9x6M9AtkPXI59O0OJ7r-q56vX-Y8v-ED1zYtL02q91_IgrLn9ymAnIuRDunkc0OrzmP9D50-Xhx_yyht2i6cRRdoBsfCIl2sIQ==">
-        
-        <div class="form-title">Join my email list</div>
-
-        <input type="text" id="EMAIL" name="EMAIL" placeholder="Enter your email" required>
-
-        <button type="submit">Submit</button>
-
-        <!-- Hidden fields required by Brevo -->
-        <input type="text" name="email_address_check" value="" class="input--hidden">
-        <input type="hidden" name="locale" value="en">
-
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- Brevo JS -->
-<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<!-- Brevo Form via Iframe -->
+<iframe 
+  width="540" 
+  height="305" 
+  src="https://013e89fa.sibforms.com/serve/MUIFAOzSQJvDuhMQzgfp0A9hMMWe8yB4uB8qJ-7d4l6s3iKBs88u4XKJhx3PebdtCDNxqhFVeUgsOOaFIowD-sTskv_D3-2v_lr5tdZnp0_E1Z6t9x6M9AtkPXI59O0OJ7r-q56vX-Y8v-ED1zYtL02q91_IgrLn9ymAnIuRDunkc0OrzmP9D50-Xhx_yyht2i6cRRdoBsfCIl2sIQ==" 
+  frameborder="0" 
+  scrolling="auto" 
+  allowfullscreen
+></iframe>
 
 </body>
 </html>
