@@ -16,17 +16,19 @@
     max-width: 600px;
     padding: 0 20px;
   }
+
   a {
     text-decoration: none;
     color: black;
   }
+
   p.socials {
     margin-top: 30px;
     margin-bottom: 40px;
   }
 
-  /* Center the Brevo form and all inner elements */
-  #sib-container, #sib-form-container, #sib-container .sib-form, #sib-container form {
+  /* Center everything inside the Brevo form container */
+  #sib-container, #sib-form-container, #sib-container .sib-form {
     display: flex !important;
     flex-direction: column;
     align-items: center !important;
@@ -34,10 +36,9 @@
     margin: 0 auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    box-sizing: border-box !important;
   }
 
-  /* Minimal input styling */
+  /* Style the email input */
   #sib-container input#EMAIL {
     width: 300px;
     max-width: 100%;
@@ -47,7 +48,6 @@
     margin: 10px 0;
     border: 1px solid black;
     border-radius: 0;
-    box-sizing: border-box;
   }
 
   #sib-container input#EMAIL::placeholder {
@@ -56,6 +56,7 @@
     color: #333;
   }
 
+  /* Style the submit button */
   #sib-container button {
     padding: 8px 16px;
     font-size: 16px;
@@ -72,11 +73,8 @@
     font-size: 20px;
     font-weight: normal;
     margin-bottom: 10px;
-    text-align: center;
   }
-
 </style>
-
 </head>
 <body>
 
@@ -88,13 +86,16 @@
   <a href="https://www.tiktok.com/@mr.vash.p" target="_blank">TikTok</a>
 </p>
 
-<!-- START Brevo form -->
+<!-- Brevo Form -->
 <div class="sib-form" style="text-align: center;">
   <div id="sib-container" class="sib-container--large sib-container--vertical">
     <div id="sib-form-container">
-      <form id="sib-form" method="POST" data-type="subscription" 
+      <div id="error-message" class="sib-form-message-panel" style="display:none;"></div>
+      <div id="success-message" class="sib-form-message-panel" style="display:none;"></div>
+      
+      <form id="sib-form" method="POST" data-type="subscription"
         action="https://013e89fa.sibforms.com/serve/MUIFAOzSQJvDuhMQzgfp0A9hMMWe8yB4uB8qJ-7d4l6s3iKBs88u4XKJhx3PebdtCDNxqhFVeUgsOOaFIowD-sTskv_D3-2v_lr5tdZnp0_E1Z6t9x6M9AtkPXI59O0OJ7r-q56vX-Y8v-ED1zYtL02q91_IgrLn9ymAnIuRDunkc0OrzmP9D50-Xhx_yyht2i6cRRdoBsfCIl2sIQ==">
-
+        
         <div class="form-title">Join my email list</div>
 
         <input type="text" id="EMAIL" name="EMAIL" placeholder="Enter your email" required>
@@ -109,7 +110,6 @@
     </div>
   </div>
 </div>
-<!-- END Brevo form -->
 
 <!-- Brevo JS -->
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
