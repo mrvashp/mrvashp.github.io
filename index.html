@@ -9,7 +9,7 @@
   body {
     font-family: sans-serif;
     text-align: center;
-    margin: 40px auto;
+    margin: 80px auto; /* space from top */
     max-width: 600px;
     padding: 0 20px;
   }
@@ -17,42 +17,78 @@
     text-decoration: none;
     color: black;
   }
-  form input[type="email"] {
+  p.socials {
+    margin-top: 30px; /* space below headline */
+    margin-bottom: 40px; /* space before email section */
+  }
+  /* Minimal Brevo form styling */
+  #sib-container input#EMAIL {
     width: 100%;
     max-width: 300px;
     padding: 8px;
-    margin-top: 10px;
     font-size: 16px;
+    text-align: center; /* center text in input */
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 0;
   }
-  form input[type="submit"] {
+  /* Center placeholder text and make it slightly smaller */
+  #sib-container input#EMAIL::placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+  }
+  #sib-container button {
     padding: 8px 16px;
     margin-top: 10px;
     font-size: 16px;
-    background: none;
-    border: 1px solid black;
     cursor: pointer;
+    background: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 0;
+  }
+  #sib-container form {
+    background: none;
+    border: none;
+    box-shadow: none;
+    max-width: 100%;
   }
 </style>
+
+<!-- Brevo CSS (required) -->
+<link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+
 </head>
 
 <body>
 
 <h1>Vash P.</h1>
 
-<p>
-  <a href="https://youtube.com/@YOURCHANNEL" target="_blank">YouTube</a> ·
-  <a href="https://instagram.com/YOURIG" target="_blank">Instagram</a> ·
-  <a href="https://tiktok.com/@YOURTIKTOK" target="_blank">TikTok</a>
+<p class="socials">
+  <a href="https://www.youtube.com/@mr.vash.p" target="_blank">YouTube</a> ·
+  <a href="https://instagram.com/mr.vash.p" target="_blank">Instagram</a> ·
+  <a href="https://www.tiktok.com/@mr.vash.p" target="_blank">TikTok</a>
 </p>
 
-<h3>Join my email list</h3>
+<!-- Begin Brevo Form -->
+<div id="sib-container">
+  <form id="sib-form" method="POST" action="https://013e89fa.sibforms.com/serve/MUIFAOzSQJvDuhMQzgfp0A9hMMWe8yB4uB8qJ-7d4l6s3iKBs88u4XKJhx3PebdtCDNxqhFVeUgsOOaFIowD-sTskv_D3-2v_lr5tdZnp0_E1Z6t9x6M9AtkPXI59O0OJ7r-q56vX-Y8v-ED1zYtL02q91_IgrLn9ymAnIuRDunkc0OrzmP9D50-Xhx_yyht2i6cRRdoBsfCIl2sIQ==" data-type="subscription">
+    <div style="padding: 8px 0;">
+      <p style="font-size:32px; font-weight:700;">Join my email list</p>
+    </div>
+    <div style="padding: 8px 0;">
+      <input type="text" id="EMAIL" name="EMAIL" placeholder="Enter your email" required>
+    </div>
+    <div style="padding: 8px 0;">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+<!-- End Brevo Form -->
 
-<!-- Replace this form action with your email provider form URL -->
-<form action="YOUR_EMAIL_LIST_ENDPOINT" method="post">
-  <input type="email" name="email" placeholder="Enter your email" required>
-  <br>
-  <input type="submit" value="Submit">
-</form>
+<!-- Brevo JS -->
+<script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
 </html>
